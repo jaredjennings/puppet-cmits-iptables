@@ -38,7 +38,7 @@
 define iptables::use($site_subnets, $broadcast, $gateway) {
     include iptables
     file { "/etc/sysconfig/iptables":
-        owner => root, group => 0, mode => 0600,
+        owner => root, group => 0, mode => '0600',
         content => template("${name}"),
         notify => Service["iptables"],
 # This previusly required xtables-addons; see Subversion revision
